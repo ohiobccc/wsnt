@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "J:/ws/n3/lib/highcharts/js/highcharts.js",
+        "J:/ws/n3/lib/speed.js",
+        "O:/ws/n3/lib/telnet.js"
+    ]
+}

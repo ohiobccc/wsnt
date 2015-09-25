@@ -1,0 +1,270 @@
+@font-face { 
+	font-family: "Open Sans Light";
+	src: url('../../fonts/OpenSans-Light.woff') format('woff'),
+		url('../../fonts/OpenSans-Light.ttf') format('truetype');
+}
+
+body {
+	background-color: #232628;
+	color: #c2c9d1;
+	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, "Segoe WP", "Arial Unicode MS", Calibri, Arial;
+	font-size: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+header {
+	clear: both;
+}
+
+nav {
+	width: 100%;
+	height: 1.33em;
+	clear: both;
+	background-color: #3e3e3e;
+}
+
+nav > ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav > ul > li {
+	list-style: none;
+	display: inline;
+	float: left;
+	margin-right: 0.66em;
+	font-size: 75%;
+}
+
+nav > ul > li > div { 
+	position: absolute;
+	left: -999em;
+	-webkit-opacity: 0.0;
+	opacity: 0.0;
+	
+}
+nav > ul > li:hover {
+	cursor: hand;
+}
+nav li:hover > div { 
+	visibility: visible;
+	position: absolute;
+    display: block;
+	color: white;
+	border-radius: 12px;
+	left: 0.5em;
+	top: 1.1em;
+	width: 90%;
+	height: auto;
+	cursor: hand;
+	padding: 0.4em;
+	-webkit-opacity: 0.90;
+	opacity: 0.90;
+	cursor: default;
+	background-color: #101010;
+	border: 2px solid #707070;
+}
+nav li:hover > div * { 
+    z-index: 5;
+}
+
+
+.navMenuContainer {
+	width: 95%;
+	align-self: center;
+	border: none;
+	z-index: 5;
+}
+
+.navMenuContainer > div {
+	float: left;
+	font-weight: bold;
+	font-size: 110%;
+	padding: 0 3% 0.25em 1%;
+	z-index: 5;
+}
+
+.navMenuContainer > div > ul {
+	font-weight: normal;
+	list-style: none;
+	padding: 0.5em;
+	margin: 0;
+	z-index: 6;
+}
+
+.navMenuContainer > div > ul > li {
+    font-size: 75%;
+}
+
+.navMenuLink,.navMenuLink:visited  {
+	color: #b9b9b9;
+}
+
+.navMenuLink:hover {
+	color: #cfcfcf;
+}
+
+/* INPUT FIELDS */
+
+.formButtons {
+	float: right;
+	
+}
+
+.stdInput {
+	background-color: #3a3a3a;
+	border: none;
+	padding: 2px;
+	font-size: 1.02em;
+	color: #c2c9d1;
+	margin: 2px 2px 2px 0;
+	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Calibri, Arial;
+	border-radius: 5px;
+}
+
+#copyNotes, #clearNotes {
+	background-color: #1a1a1a;
+	line-height: 1.5em;
+	height: 22px;
+	width: 55px;
+}
+
+.stdInput:last-child {
+	margin-right: 0;
+}
+
+.stdButton {
+	background-color: #3f3f3f;
+	color: #999999;
+	border: none;
+	padding: 3px;
+	font-family: "Open Sans Light", "Helvetica Neue", Helvetica, Calibri, Arial;
+	font-size: 0.85em;
+}
+
+#hasTrain {
+	display: inline;
+}
+
+#aiNotes {
+	width: 19em;
+	height: 4.5em;
+}
+
+.ui-button .ui-button-text {
+	padding: 0px 6px 0px 6px !important;
+	font-size: .5em !important;
+	
+}
+
+/* MISC */
+.spacerTiny {
+	font-size: 2px;
+	clear: both;
+}
+
+.inline {
+	display: inline;
+}
+
+.smallerText {
+    font-size: 75%;
+}
+
+::-webkit-input-placeholder {
+	font-size: 80%;
+	font-style: italic;
+	padding: 1.33% 0 0 0.5em;
+	color: #CCC;
+}
+
+::-moz-placeholder {
+	font-size: 80%;
+	font-style: italic;
+	padding: 1.33% 0 0 0.5em;
+	color: #CCC;
+}
+
+::-ms-input-placeholder {
+	font-size: 80%;
+	font-style: italic;
+	padding: 1.33% 0 0 0.5em;
+	color: #CCC;
+}
+
+input:-moz-placeholder {
+	font-size: 80%;
+	font-style: italic;
+	padding: 1.33% 0 0 0.5em;
+	color: #CCC;
+}
+
+.modalVisibleFull {
+    display: block;
+    opacity: 1.0;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modalDimmer {
+    opacity: 0.75;
+    display: block;
+    z-index: 8;
+    position: fixed;
+    background-color: #050505;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.modalCloser {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.dimText {
+	color: #707070;
+}
+
+.dimText * {
+	color: #909090;
+}
+
+.hideMe {
+    visibility: hidden;
+}
+
+/* INPUT FIELD RESIZING */
+.char4  { width: 3.75em; }
+.char6  { width: 4.50em; }
+.char8  { width: 5.50em; }
+.char10 { width: 6.00em; }
+.char12 { width: 6.75em; }
+.char15 { width: 7.75em; }
+.char17 { width: 8.00em; }
+.char20 { width: 9.00em; }
+.char22 { width: 10.25em; }
+.char25 { width: 11.80em; }
+
+ /* QUICK FIXES */
+#conn, #conn2 {
+	display: none;
+}
+
