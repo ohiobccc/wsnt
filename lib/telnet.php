@@ -435,7 +435,7 @@ $mdm['ip'] = '';
 $mdm['mac'] = '';
 $mdm['port'] = 23;
 $mdm['un'] = '###WINDSTREAMPROPRIETARY###';
-$mdm['pw'] = '###WINDSTREAMPROPRIETARY###';
+$mdm['pw'] = '';
 $mdm['commands'] = false;
 $out = '';
 
