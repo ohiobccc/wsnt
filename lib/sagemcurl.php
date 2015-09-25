@@ -230,8 +230,8 @@ class SagemPageScrapers {
 
 // Default modem session params
 $mdm = Array();
-$mdm['ip'] = false;
-$mdm['mac'] = false;
+$mdm['ip'] = false; // 98.18.80.57
+$mdm['mac'] = false; // 44E9DD01ACB5
 $mdm['user'] = '###WINDSTREAMPROPRIETARY###';
 $mdm['passPre'] = '###WINDSTREAMPROPRIETARY###';
 $mdm['port'] = '50580';
@@ -244,14 +244,20 @@ if ($_POST) {
 		$mdm['ip'] = $_POST['ip'];
 		$mdm['mac'] = $_POST['mac'];
 		$mdm['port'] = $_POST['port'];
-      	// "q" dictates what routines to perform
+      	// "q" dictates which routines to perform
 		switch ($_POST['q']) {
 			case 'wanstats':
 				/* WAN Statistics */
-				$wanStatsPageData = new SagemInterface($mdm);
-				$wanStatsPageData->getPageHTML('/statswan.cmd');
-				$wanStatsPageData->setTimestamp();
+				
+                // Create connection parameters
+                $wanStatsPageData = new SagemInterface($mdm);
+                // Init cURL and retrieve page HTML
+                $wanStatsPageData->getPageHTML('/statswan.cmd');
+				// Set page retrieval timestamp (for speed measurments)
+                $wanStatsPageData->setTimestamp();
+                // Initialize Page Scraper (DOMDocument/DOM XPath)
 				$wanStatsPageData->scraper = new SagemPageScrapers($wanStatsPageData->currentHTML);
+                // Scrape and return data
 				$wanStats = $wanStatsPageData->scraper->parseWANStats($wanStatsPageData->currentTimestamp);				
 
 				/* xDSL Statistics */
@@ -333,7 +339,7 @@ if ($_POST) {
 
 // Return retrieved data to XHR request
 // Encode for JSON if long in, otherwise spit out generic text for callback.
-if (count($out) > 2) {
+if (count($out) > 0) {
   	echo json_encode($out);
 } else {
     echo 'Request finished... If commands return errors, please manually check port forward, troubleshoot connection problems, or check command syntax.';
